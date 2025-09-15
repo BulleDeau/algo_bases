@@ -78,8 +78,15 @@ def factorielle(n: int) -> int:
        - Multiplier le résultat actuel par i.
     4. Retourner le résultat.
     """
-    # TODO
-    raise NotImplementedError
+    if n < 0:
+        raise ValueError
+    elif n == 0:
+        return 1
+    else:
+        resultat = 1
+        for i in range(n):
+            resultat = resultat * (i+1)
+        return resultat
 
 def convertir_en_binaire(n: int) -> str:
     """Convertit un entier en représentation binaire."""
