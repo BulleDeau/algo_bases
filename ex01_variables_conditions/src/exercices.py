@@ -49,7 +49,7 @@ def est_bissextile(annee: int) -> bool:
     """
     if annee % 4 != 0 or ( annee % 4 == 0 and annee % 100 == 0 and annee % 400 != 0):
         return False
-    elif  annee % 100 != 0 or (annee % 100 == 0 and annee % 400 == 0):
+    else:
         return True
 
 def racine_carree(x: float) -> float:
