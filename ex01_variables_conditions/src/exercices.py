@@ -3,30 +3,34 @@ from __future__ import annotations
 
 def somme(a: int, b: int) -> int:
     """Retourne la somme de deux entiers."""
-    # TODO
-    raise NotImplementedError
+    resultat = a + b
+    return resultat
 
 
 def produit(a: int, b: int) -> int:
     """Retourne le produit de deux entiers."""
-    # TODO
-    raise NotImplementedError
+    resultat = a * b
+    return resultat
 
 
 def est_pair(n: int) -> bool:
     """Vrai si le nombre est pair."""
-    # TODO
-    raise NotImplementedError
+    if n % 2 == 0:
+        return True
+    else:
+        return False
 
 def est_voyelle(lettre: str) -> bool:
     """Vrai si la lettre est une voyelle."""
-    # TODO
-    raise NotImplementedError
+    if lettre.lower() in "aeiouy":
+        return True
+    else:
+        return False
 
 def calcul_reduction(prix: float, taux: float) -> float:
     """Retourne le prix après remise (taux en pourcentage)."""
-    # TODO
-    raise NotImplementedError
+    return prix * (1 - taux / 100)
+     
 
 
 def est_bissextile(annee: int) -> bool:
@@ -38,7 +42,7 @@ def est_bissextile(annee: int) -> bool:
         - 1900 n'est pas bissextile (divisible par 100 mais pas par 400).
         - 2004 est bissextile (divisible par 4 mais pas par 100).
     """
-    raise NotImplementedError
+    if annee % 400
 
 def racine_carree(x: float) -> float:
     """Retourne la racine carrée d'un nombre."""
