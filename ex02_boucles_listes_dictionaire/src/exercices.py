@@ -3,17 +3,20 @@ from __future__ import annotations
 
 def somme_pairs(nums: list[int]) -> int:
     # TODO: Implémentez la fonction pour calculer la somme de tous les nombres pairs de la liste donnée.
-    taille = len(nums)
     calcul = 0
-    for i in range(taille):
-        if nums[i] % 2 == 0:
-            calcul += nums[i]
+    for i in nums:
+        if i % 2 == 0:
+            calcul += i
     return calcul
 
 
 def compter_occurrences(items: list[int], valeur: int) -> int:
     # TODO: Implémentez la fonction pour compter le nombre d'occurrences de `valeur` dans la liste `items`.
-    raise NotImplementedError
+    nb_occurence = 0
+    for i in items:
+        if i == valeur:
+            nb_occurence += 1
+    return nb_occurence
 
 
 def table_multiplication(n: int) -> list[int]:
