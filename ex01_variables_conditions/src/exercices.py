@@ -1,5 +1,5 @@
 from __future__ import annotations
-
+import math
 
 def somme(a: int, b: int) -> int:
     """Retourne la somme de deux entiers."""
@@ -54,8 +54,9 @@ def est_bissextile(annee: int) -> bool:
 
 def racine_carree(x: float) -> float:
     """Retourne la racine carrée d'un nombre."""
-    # TODO
-    raise NotImplementedError
+    if x < 0:
+        raise ValueError
+    return math.sqrt(x)
 
 def maximum_trois(a: int, b: int, c: int) -> int:
     """Renvoie le maximum de trois valeurs sans utiliser max()."""
