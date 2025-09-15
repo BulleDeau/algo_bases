@@ -90,6 +90,15 @@ def factorielle(n: int) -> int:
 
 def convertir_en_binaire(n: int) -> str:
     """Convertit un entier en représentation binaire."""
-    # TODO
-    raise NotImplementedError
+    concatene = ""
+    div = n
+    if n == 0:
+        return str(n)
+    else:
+        while div > 0:
+            calcul = div % 2
+            concatene = concatene + str(calcul)
+            div = int(div / 2)
+        inversion = concatene[::-1]
+        return inversion
 
