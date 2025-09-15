@@ -29,7 +29,12 @@ def est_voyelle(lettre: str) -> bool:
 
 def calcul_reduction(prix: float, taux: float) -> float:
     """Retourne le prix après remise (taux en pourcentage)."""
-    return prix * (1 - taux / 100)
+    if prix < 0:
+        raise ValueError
+    elif prix == 0 or taux > 100:
+        return 0.0
+    else:
+        return prix * (1 - (taux / 100))
      
 
 
@@ -42,7 +47,10 @@ def est_bissextile(annee: int) -> bool:
         - 1900 n'est pas bissextile (divisible par 100 mais pas par 400).
         - 2004 est bissextile (divisible par 4 mais pas par 100).
     """
-    if annee % 400
+    if annee % 4 != 0 or ( annee % 4 == 0 and annee % 100 == 0 and annee % 400 != 0):
+        return False
+    elif  annee % 100 != 0 or (annee % 100 == 0 and annee % 400 == 0):
+        return True
 
 def racine_carree(x: float) -> float:
     """Retourne la racine carrée d'un nombre."""
