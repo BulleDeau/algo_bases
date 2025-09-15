@@ -3,7 +3,12 @@ from __future__ import annotations
 
 def somme_pairs(nums: list[int]) -> int:
     # TODO: Implémentez la fonction pour calculer la somme de tous les nombres pairs de la liste donnée.
-    raise NotImplementedError
+    taille = len(nums)
+    calcul = 0
+    for i in range(taille):
+        if nums[i] % 2 == 0:
+            calcul += nums[i]
+    return calcul
 
 
 def compter_occurrences(items: list[int], valeur: int) -> int:
