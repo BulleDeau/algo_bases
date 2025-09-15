@@ -60,8 +60,14 @@ def racine_carree(x: float) -> float:
 
 def maximum_trois(a: int, b: int, c: int) -> int:
     """Renvoie le maximum de trois valeurs sans utiliser max()."""
-    # TODO
-    raise NotImplementedError
+    if a > b:
+        if a > c:
+            return a
+        else:
+            return b
+    elif b > c:
+        return b
+    return c
 
 def factorielle(n: int) -> int:
     """Retourne la factorielle d'un entier.
