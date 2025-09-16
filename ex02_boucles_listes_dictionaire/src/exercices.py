@@ -104,12 +104,11 @@ def trouver_plus_long(items: list[str]) -> str:
     return motPlusLong
 
 
-        
-
-
 def convertir_majuscule(items: list[str]) -> list[str]:
     # TODO: Implémentez une fonction pour convertir toutes les chaînes de la liste en majuscules.
-    raise NotImplementedError
+    majuscule = items.upper()
+    return majuscule    
+
 
 
 def compter_mots_commencant_par(items: list[str], lettre: str) -> int:
