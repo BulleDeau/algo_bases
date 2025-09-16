@@ -113,7 +113,12 @@ def convertir_majuscule(items: list[str]) -> list[str]:
 
 def compter_mots_commencant_par(items: list[str], lettre: str) -> int:
     # TODO: Implémentez une fonction pour compter les mots commençant par une lettre donnée.
-    raise NotImplementedError
+    nbMots = 0
+    liste = items.split()
+    for mot in liste:
+        if mot[0] == lettre:
+            nbMots += 1
+    return nbMots
 
 
 def trouver_mot_finissant_par(items: list[str], suffixe: str) -> list[str]:
