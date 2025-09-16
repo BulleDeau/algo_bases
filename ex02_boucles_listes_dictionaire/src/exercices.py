@@ -123,7 +123,9 @@ def compter_mots_commencant_par(phrase: str, lettre: str) -> int:
 
 def trouver_mot_finissant_par(phrase: str, suffixe: str) -> list[str]:
     # TODO: Implémentez une fonction pour trouver tous les mots qui se terminent par un suffixe donné dans la liste.
-    raise NotImplementedError
+    listeMots = phrase.split()
+    motsAvecSuffixe = [mot for mot in listeMots if mot.endswith(suffixe)]
+    return motsAvecSuffixe
 
 
 def compter_caracteres(s: str) -> int:
