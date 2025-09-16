@@ -78,9 +78,16 @@ def compter_negatifs(nums: list[int]) -> int:
     return quantiteNbreNegatif
 
 
-def compter_mots(items: list[str], mot: str) -> int:
+def compter_mots(phrase: str) -> int:
     # TODO: Implémentez une fonction pour compter le nombre d'occurrences de `mot` dans une liste de chaînes de caractères.
-    raise NotImplementedError
+    if phrase == "":
+        return 0
+    else:
+        quantiteMots = 1
+        for caractere in phrase:
+            if caractere.isspace():
+                quantiteMots += 1
+        return quantiteMots
 
 
 def trouver_plus_long(items: list[str]) -> str:
