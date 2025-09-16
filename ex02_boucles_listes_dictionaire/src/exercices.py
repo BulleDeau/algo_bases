@@ -29,7 +29,29 @@ def table_multiplication(n: int) -> list[int]:
 
 def trouver_maximum(nums: list[int]) -> int:
     # TODO: Implémentez une fonction pour trouver et retourner la valeur maximale dans la liste.
-    raise NotImplementedError
+    rang = 0
+    taille = len(nums)
+    # faire une boucle pour passer chaque position de la liste nums indépendemment de la valeur qui s'y trouve (sauf les 2 dernières)
+    while rang < (taille-1):
+        # pour chaque position de la liste, comparer la valeur qui s'y trouve à la valeur de la position suivante  
+        for i in range(taille-1):
+            # si la valeur est supérieure à la valeur de la position suivante
+            if nums[i] > nums[i+1]:
+                # ajouter cette valeur à la fin de la liste
+                nums.append(nums[i])
+                # effacer la valeur de la position
+                del nums[i]
+                # incrémenter "rang" pour passer à la position suivante
+                rang += 1
+                # pas la peine de passer à la valeur suivante car elle à changer de place
+                break
+    # finir par comparer la valeur de l'avant dernière position avec celle de la dernière position
+    if nums[taille-2] > nums[taille-1]:
+        return nums[taille-2]
+    else:
+        return nums[taille-1]
+                
+
 
 
 def calculer_moyenne(nums: list[int]) -> float:
