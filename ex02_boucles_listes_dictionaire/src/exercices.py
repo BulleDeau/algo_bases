@@ -128,8 +128,8 @@ def trouver_mot_finissant_par(phrase: str, suffixe: str) -> list[str]:
     return motsAvecSuffixe
 
 
-def compter_caracteres(s: str) -> int:
-    # TODO: Implémentez une fonction pour compter et retourner le nombre total de caractères dans la chaîne.
+def compter_caracteres(s: st, char: str) -> int:
+    # TODO: Implémentez une fonction pour compter le nombre d'occurences du caractère char et retourner le nombre total.
     raise NotImplementedError
 
 
