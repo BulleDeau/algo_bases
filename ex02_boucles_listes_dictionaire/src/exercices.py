@@ -174,7 +174,6 @@ def trouver_occurrences_chaine(s: str, c: str) -> int:
                 occurence += 1
     return occurence
 
-
 # tuples
 def somme_pairs_tuples(nums: tuple[int, ...]) -> int:
     # TODO: Implémentez la fonction pour calculer la somme de tous les nombres pairs dans un tuple donné.
