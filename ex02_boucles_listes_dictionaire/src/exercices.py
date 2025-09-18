@@ -316,8 +316,15 @@ def fusionner_dictionnaires(d1: dict, d2: dict) -> dict:
 def inverser_dictionnaire(d: dict) -> dict:
     # TODO: Implémentez une fonction pour inverser un dictionnaire, échangeant les clés et les valeurs.
     # Note: Si des valeurs duplicatées existent, une erreur ou un comportement spécifique doit être défini.
-    raise NotImplementedError
-
+    resultat = {}
+    for cle, valeur in d.items():
+        verif = True
+        for cleBis, valeurBis in resultat.items():
+            if cleBis == valeur and valeurBis == cle:
+                verif = False
+        if verif == True:
+            resultat[valeur] = cle
+    return resultat
 
 def compter_valeurs(d: dict) -> int:
     # TODO: Implémentez une fonction pour compter combien de paires clé-valeur sont dans le dictionnaire.
