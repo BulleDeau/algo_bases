@@ -246,7 +246,11 @@ def somme_pairs_sets(nums: set[int]) -> int:
 
 def compter_occurrences_sets(items: set[int], valeur: int) -> int:
     # TODO: Cette fonction vérifiera simplement si `valeur` existe puisque les sets ne permettent pas les doublons.
-    raise NotImplementedError
+    count = 0
+    for i in items:
+        if i == valeur:
+            count += 1
+    return count
 
 
 def table_multiplication_sets(n: int) -> set[int]:
