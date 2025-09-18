@@ -296,12 +296,14 @@ def compter_negatifs_sets(nums: set[int]) -> int:
 
 def ajouter_element(d: dict, cle: str, valeur: any) -> dict:
     # TODO: Implémentez une fonction pour ajouter une clé et sa valeur dans un dictionnaire.
-    raise NotImplementedError
+    d[cle] = valeur
+    return d
 
 
 def supprimer_element(d: dict, cle: str) -> dict:
     # TODO: Implémentez une fonction pour supprimer une clé et sa valeur d'un dictionnaire.
-    raise NotImplementedError
+    del d[cle]
+    return d
 
 
 def fusionner_dictionnaires(d1: dict, d2: dict) -> dict:
