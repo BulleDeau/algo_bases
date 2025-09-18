@@ -255,7 +255,10 @@ def compter_occurrences_sets(items: set[int], valeur: int) -> int:
 
 def table_multiplication_sets(n: int) -> set[int]:
     # TODO: Implémentez une fonction pour retourner la table de multiplication (jusqu'à 10 inclus) sous forme de set.
-    raise NotImplementedError
+    mon_set = set()
+    for i in range(10):
+        mon_set.add((i+1)*n)
+    return mon_set
 
 
 def trouver_maximum_sets(nums: set[int]) -> int:
