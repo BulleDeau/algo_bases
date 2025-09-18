@@ -187,7 +187,6 @@ def compter_occurrences_tuples(items: tuple[int, ...], valeur: int) -> int:
     # TODO: Implémentez la fonction pour compter le nombre d'occurrences d'une valeur dans un tuple donné.
     count = 0
     for i in items:
-        print(i)
         if i == valeur:
             count += 1
     return count
@@ -203,7 +202,25 @@ def table_multiplication_tuples(n: int) -> tuple[int, ...]:
 
 def trouver_maximum_tuples(nums: tuple[int, ...]) -> int:
     # TODO: Implémentez une fonction pour trouver et retourner le nombre maximum d'un tuple.
-    raise NotImplementedError
+    max = None
+    taille = len(nums)
+    count = 0
+    while count != taille:
+        count = 0
+        # passer en revu toutes les valeurs de nums
+        for i in nums:
+            if max is None:
+                max = i
+            if i > max:
+                max = i
+                count = 0
+            else:
+                count += 1
+        # si "i" n'est jamais plus grand que max pendant la totalité de la boucle alors
+        #       - count n'est jamais remis à 0
+        #       - count est incrémenté à chaque fois et vaut taille à la fin de la boucle
+        #  donc max contient le nombre le plus grand
+    return max
 
 
 def calculer_moyenne_tuples(nums: tuple[int, ...]) -> float:
