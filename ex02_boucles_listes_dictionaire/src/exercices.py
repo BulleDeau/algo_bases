@@ -309,7 +309,8 @@ def supprimer_element(d: dict, cle: str) -> dict:
 def fusionner_dictionnaires(d1: dict, d2: dict) -> dict:
     # TODO: Implémentez une fonction qui fusionne deux dictionnaires et renvoie le résultat.
     # Les valeurs de `d2` remplaceront celles de `d1` en cas de doublons.
-    raise NotImplementedError
+    resultat = d1 | d2
+    return resultat
 
 
 def inverser_dictionnaire(d: dict) -> dict:
