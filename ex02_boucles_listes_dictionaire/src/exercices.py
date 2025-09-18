@@ -328,12 +328,28 @@ def inverser_dictionnaire(d: dict) -> dict:
 
 def compter_valeurs(d: dict) -> int:
     # TODO: Implémentez une fonction pour compter combien de paires clé-valeur sont dans le dictionnaire.
-    raise NotImplementedError
+    resultat = 0
+    for cle, valeur in d.items():
+        resultat += 1
+    return resultat
 
 
 def trouver_valeur_maximale(d: dict) -> any:
     # TODO: Implémentez une fonction pour trouver et retourner la valeur la plus grande dans un dictionnaire.
-    raise NotImplementedError
+    max = None
+    taille = compter_valeurs(d)
+    count = 0
+    while count != taille:
+        count = 0
+        for cle, valeur in d.items():
+            if max is None:
+                max = valeur
+            if valeur > max:
+                max = valeur
+                count = 0
+            else:
+                count += 1
+    return max
 
 
 def trouver_cle_par_valeur(d: dict, valeur: any) -> list[str]:
