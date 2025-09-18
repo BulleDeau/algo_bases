@@ -185,13 +185,21 @@ def somme_pairs_tuples(nums: tuple[int, ...]) -> int:
 
 def compter_occurrences_tuples(items: tuple[int, ...], valeur: int) -> int:
     # TODO: Implémentez la fonction pour compter le nombre d'occurrences d'une valeur dans un tuple donné.
-    raise NotImplementedError
+    count = 0
+    for i in items:
+        print(i)
+        if i == valeur:
+            count += 1
+    return count
 
 
 def table_multiplication_tuples(n: int) -> tuple[int, ...]:
     # TODO: Implémentez la fonction pour retourner la table de multiplication (jusqu'à 10 inclus) sous forme de tuple.
-    raise NotImplementedError
-
+    ma_liste = []
+    for i in range(10):
+        ma_liste.append((i+1)*n)
+    return tuple(ma_liste)
+    
 
 def trouver_maximum_tuples(nums: tuple[int, ...]) -> int:
     # TODO: Implémentez une fonction pour trouver et retourner le nombre maximum d'un tuple.
