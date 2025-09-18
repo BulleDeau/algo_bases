@@ -286,7 +286,11 @@ def trouver_maximum_sets(nums: set[int]) -> int:
 
 def compter_negatifs_sets(nums: set[int]) -> int:
     # TODO: Implémentez une fonction pour compter et retourner le nombre de nombres négatifs dans un set.
-    raise NotImplementedError
+    count = 0
+    for i in nums:
+        if i < 0:
+            count += 1
+    return count
 
 # dictionnaires
 
