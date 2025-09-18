@@ -354,7 +354,12 @@ def trouver_valeur_maximale(d: dict) -> any:
 
 def trouver_cle_par_valeur(d: dict, valeur: any) -> list[str]:
     # TODO: Implémentez une fonction pour retourner une liste de toutes les clés correspondant à une valeur donnée.
-    raise NotImplementedError
+    resultat = ""
+    for cle, val in d.items():
+        if valeur == val:
+            resultat += str(cle)
+            
+    return resultat
 
 
 def verifier_cle_existe(d: dict, cle: str) -> bool:
