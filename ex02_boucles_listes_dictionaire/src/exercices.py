@@ -128,19 +128,52 @@ def trouver_mot_finissant_par(phrase: str, suffixe: str) -> list[str]:
     return motsAvecSuffixe
 
 
-def compter_caracteres(s: st, char: str) -> int:
+def compter_caracteres(s: str, char: str) -> int:
     # TODO: Implémentez une fonction pour compter le nombre d'occurences du caractère char et retourner le nombre total.
-    raise NotImplementedError
+    occurence = 0
+    # for i in range(len(s)):
+    #    if s[i] == char:
+    for i in s:
+        if i == char:            
+            occurence += 1
+    return occurence
 
 
 def inverser_chaine(s: str) -> str:
     # TODO: Implémentez une fonction pour inverser et retourner la chaîne de caractères donnée.
-    raise NotImplementedError
+    taille = len(s)
+    inverser_chaine = ""
+    for i in range(taille-1, -1, -1):
+        print(i, " ", s[i])
+        inverser_chaine += s[i]
+    return inverser_chaine
+ 
 
 
 def trouver_occurrences_chaine(s: str, c: str) -> int:
     # TODO: Implémentez une fonction pour compter les occurrences d'un caractère donné dans une chaîne.
-    raise NotImplementedError
+    occurence = 0
+    tailleS = len(s)
+    tailleC = len(c)
+    # passer les lettres de la chaîne "s" une par une
+    for i in range(tailleS):
+        # si la lettre est identique à la première lettre de la chaîne "c"
+        if s[i] == c[0]:
+            # compter cette première lettre identique
+            compteur = 1
+            # vérifier que les lettres suivantes de "c" sont identiques aux lettres suivantes de "s"
+            for j in range(tailleC-1):
+                if c[j+1] == s[i+j+1]:
+                    # pour chaque lettre identique, compter 1 de plus
+                    compteur += 1
+                else:
+                    # dès que différence apparaît, arrêter la vérification
+                    break
+            # si toutes les lettres de "c" ont étaient identiques aux lettres de "s", compter une occurence
+            if compteur == tailleC:
+                occurence += 1
+    return occurence
+
 
 # tuples
 def somme_pairs_tuples(nums: tuple[int, ...]) -> int:
