@@ -358,13 +358,16 @@ def trouver_cle_par_valeur(d: dict, valeur: any) -> list[str]:
     for cle, val in d.items():
         if valeur == val:
             resultat += str(cle)
-            
     return resultat
 
 
 def verifier_cle_existe(d: dict, cle: str) -> bool:
     # TODO: Implémentez une fonction qui vérifie si une clé existe dans le dictionnaire.
-    raise NotImplementedError
+    resultat = False
+    for lacle, val in d.items():
+        if cle == lacle:
+            resultat = True
+    return resultat
 
 
 def valeurs_uniques(d: dict) -> set:
