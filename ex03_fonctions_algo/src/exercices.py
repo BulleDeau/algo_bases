@@ -33,12 +33,35 @@ def reverse_string(param: str) -> str:
 
 def to_uppercase(param: str) -> str:
     # Une fonction qui transforme une chaîne en majuscules.
-    raise NotImplementedError
+    majuscule = param.upper()
+    return majuscule    
 
 
 def count_substring(param: str, sub: str) -> int:
     # Une fonction qui compte le nombre d'occurrences d'une sous-chaîne dans une chaîne.
-    raise NotImplementedError
+    occurence = 0
+    taille_param = len(param)
+    taille_sub = len(sub)
+    compteur = 1
+
+    # passer les lettres de la chaîne "param" une par une
+    for i in range(taille_param-1):
+        # si la lettre est identique à la première lettre de la chaîne "sub"
+        if param[i] == sub[0]:
+            # compter cette première lettre identique
+            compteur = 1
+            # vérifier que les lettres suivantes de "sub" sont identiques aux lettres suivantes de "param"
+            for j in range(taille_sub-1):
+                if sub[j+1] == param[i+j+1]:
+                    # pour chaque lettre identique, compter 1 de plus
+                    compteur += 1
+                else:
+                    # dès que différence apparaît, arrêter la vérification
+                    break
+            # si toutes les lettres de "c" ont étaient identiques aux lettres de "s", compter une occurence
+            if compteur == taille_sub:
+                occurence += 1
+    return occurence
 
 
 def list_length(param: list[int]) -> int:
