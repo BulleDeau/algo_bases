@@ -1,10 +1,11 @@
 from __future__ import annotations
+# from measure_time import measure_time
 
 # Prise en main
 # Exemples simples : Création d'une fonction et appel
-def print_hello_world() -> None:
+def print_hello_world() -> str:
     # Une fonction qui affiche "Hello, world!"
-    raise NotImplementedError
+    return "Hello, World!"
 
 
 def reverse_string(param: str) -> str:
@@ -32,6 +33,10 @@ def max_in_list(param: list[int]) -> int:
     raise NotImplementedError
 
 
+# mesurer les performances des algos
+# print(measure_time(<nom de la fonction>, <paramètre de la fonction> , <paramètre de la fonction>))
+# lancer "run python file" dans la barre d'outils en haut à droite de ce fichier
+
 # Fonctions classiques
 def pgcd(a: int, b: int) -> int:
     # À FAIRE : Calculer le plus grand commun diviseur (PGCD) de deux entiers.
@@ -43,6 +48,7 @@ def pgcd(a: int, b: int) -> int:
     # quotient q et un reste r, tels que : a = b * q + r, avec 0 ≤ r < |b|.
     raise NotImplementedError
 
+# print(measure_time(pgcd, 50, 30))
 
 def fibonacci(n: int) -> int:
     # La suite de Fibonacci est une suite de nombres où chaque terme est la somme des deux termes précédents,
