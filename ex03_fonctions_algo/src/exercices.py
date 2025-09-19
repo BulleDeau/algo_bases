@@ -1,5 +1,6 @@
 from __future__ import annotations
 # from measure_time import measure_time
+import math as m
 
 # Prise en main
 # Exemples simples : Création d'une fonction et appel
@@ -95,16 +96,23 @@ def pgcd(a: int, b: int) -> int:
             b = reste
     return a
 
-
-
-
 # print(measure_time(pgcd, 50, 30))
 
 def fibonacci(n: int) -> int:
     # La suite de Fibonacci est une suite de nombres où chaque terme est la somme des deux termes précédents,
     # en commençant par 0 et 1. Par exemple : 0, 1, 1, 2, 3, 5, 8, ...
     # À FAIRE : Calculer le nième nombre de Fibonacci de manière itérative.
-    raise NotImplementedError
+    a = 0
+    b = 1
+    c = 0
+    if n == 1:
+        return 1
+    if n > 1:
+        for i in range(1, n):
+            c = a + b
+            a = b
+            b = c
+    return c
 
 
 def crible_eratosthene(n: int) -> list[int]:
@@ -115,7 +123,46 @@ def crible_eratosthene(n: int) -> list[int]:
     # 3. Parcourir les entiers p de 2 à √n (inclus).
     # 4. Si p est premier (booléen True), alors marquer tous ses multiples (p*p jusqu'à n) comme False.
     # 5. Extraire les indices marqués True dans la liste et les retourner sous forme de liste de nombres premiers.
-    raise NotImplementedError
+    liste = []          # contiendra les nombres premiers
+    liste_bool = []     # continendra les true et false
+
+    # si le nombre n est plus petit que le premier nombre premier, return la liste vide
+    if n <= 1:
+        return liste
+    
+    # 1. Créer une liste booléenne de taille n+1 initialement à True, où l'indice représente un nombre.
+    for i in range(n+1):
+        liste_bool.append(True)
+
+    # 2. Les indices 0 et 1 doivent être marqués comme False (0 et 1 ne sont pas premiers).
+    liste_bool[0] = False
+    liste_bool[1] = False
+   
+    # 3. Parcourir les entiers p de 2 à √n (inclus).
+    p = 2      
+    while p <= m.sqrt(n):
+
+        # 4. Si p est premier (booléen True), alors marquer tous ses multiples (p*p jusqu'à n) comme False.
+        # Si p est premier (booléen True) : recherche de la première case valant True
+        for i in range(p, n):
+            print(i)
+            if liste_bool[i] == True:
+                # alors marquer tous ses multiples (p*p jusqu'à n) comme False.
+                for j in range(i, n):
+                    indice = j * i
+                    if indice <= n:
+                        liste_bool[indice] = False
+                    else:
+                        break
+                break
+        p = p + 1
+
+    # 5. Extraire les indices marqués True dans la liste et les retourner sous forme de liste de nombres premiers.
+    for i in range(n):
+        if liste_bool[i] == True:
+            liste.append(i)
+
+    return liste
 
 
 def is_prime(n: int) -> bool:
