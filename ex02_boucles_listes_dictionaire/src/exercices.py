@@ -372,9 +372,15 @@ def verifier_cle_existe(d: dict, cle: str) -> bool:
 
 def valeurs_uniques(d: dict) -> set:
     # TODO: Implémentez une fonction qui retourne toutes les valeurs uniques dans un dictionnaire sous forme de set.
-    raise NotImplementedError
-
+    resultat = set()
+    liste = []
+    for cle, valeur in d.items():
+        liste.append(valeur)
+    resultat = set(liste)
+    return resultat
 
 def mettre_a_jour_valeur(d: dict, cle: str, nouvelle_valeur: any) -> dict:
     # TODO: Implémentez une fonction pour mettre à jour une valeur associée à une clé existante ou en ajouter une nouvelle.
-    raise NotImplementedError
+    d2 = {cle: nouvelle_valeur}
+    d.update(d2)
+    return d
