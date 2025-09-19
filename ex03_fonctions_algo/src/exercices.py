@@ -87,7 +87,16 @@ def pgcd(a: int, b: int) -> int:
     # - Lorsque b devient nul, le PGCD est la valeur actuelle de a.
     # Une division euclidienne consiste à diviser deux nombres entiers a et b (b ≠ 0) pour obtenir un
     # quotient q et un reste r, tels que : a = b * q + r, avec 0 ≤ r < |b|.
-    raise NotImplementedError
+    reste = b
+    if b != 0:
+        while reste !=0:
+            reste = a % b
+            a = b
+            b = reste
+    return a
+
+
+
 
 # print(measure_time(pgcd, 50, 30))
 
