@@ -10,7 +10,25 @@ def print_hello_world() -> str:
 
 def reverse_string(param: str) -> str:
     # Une fonction qui renverse une chaîne donnée en entrée.
-    raise NotImplementedError
+    # méthode de tranchage
+    resultat = param[::-1]
+
+    # # utilisation d'une boucle
+    # resultat = ""
+    # count = len(param)
+    # while count > 0:
+    #     resultat += param[count-1]
+    #     count -= 1
+
+    # # utilisation de reversed()
+    # resultat = "".join(reversed(param))
+
+    # # méthode récursive
+    # if len(param) == 0:
+    #     return param
+    # else:
+    #     return reverse_string(param[1:]) + param[0]
+    return resultat
 
 
 def to_uppercase(param: str) -> str:
